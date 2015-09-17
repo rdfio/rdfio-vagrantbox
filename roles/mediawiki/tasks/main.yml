@@ -1,0 +1,7 @@
+---
+- name: Download MediaWiki
+  get_url:
+    url=http://releases.wikimedia.org/mediawiki/{{mwver_major}}/mediawiki-{{mwver_minor}}.tar.gz 
+    dest=/vagrant/mediawiki-{{mwver_minor}}.tar.gz
+    mode=0440
+

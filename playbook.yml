@@ -27,3 +27,4 @@
   roles:
       - dotfiles
       - php
+      - mediawiki
