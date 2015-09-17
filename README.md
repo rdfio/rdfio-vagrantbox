@@ -3,3 +3,5 @@
 
 A Vagrant box (Virtualbox or Docker as providers) with Ansible provisioning
 for setting up development environment for developing RDFIO.
+
+**STATUS:** Work in progress!
