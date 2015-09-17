@@ -26,3 +26,4 @@
          - man-db
   roles:
       - dotfiles
+      - php
