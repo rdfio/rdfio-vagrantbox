@@ -24,4 +24,5 @@
          - htop
          - tmux
          - man-db
-  #roles:
+  roles:
+      - dotfiles
