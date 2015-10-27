@@ -24,6 +24,7 @@
          - htop
          - tmux
          - man-db
+         - python-mysqldb
   roles:
       - dotfiles
       - php

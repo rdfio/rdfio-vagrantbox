@@ -13,20 +13,16 @@
   command:
     creates=/var/www/html/w
     mv /var/www/html/mediawiki-{{mwver_minor}} /var/www/html/w
-## Rename the extracted folder
-#mv mediawiki-1.23.0 mw123
-#
-# Log in to MySQL as root:
-#mysql -u root -p
-#
-## In the mysql shell, enter the following commands:
-#CREATE DATABASE mw123;
-#CREATE USER mw123@localhost IDENTIFIED by 'changethis';
-#GRANT ALL ON mw123.* TO mw123@localhost;
-#
-## Quit from the MySQL shell:
-#quit
-#
+- name: Create MySQL database
+  mysql_db:
+    name=mw
+    state=present
+- name: Create MySQL user
+  mysql_user:
+    name=mw
+    password=changethis
+    priv=mw.*:ALL
+    state=present
 ## After downloading the LocalSettings.php file, copy it to the wiki folder:
 #cp ~/Downloads/LocalSettings.php .
 #
