@@ -31,16 +31,13 @@
     recurse=yes
 - name: Install MediaWiki database
   command:
-      php /var/www/html/w/maintenance/install.php --dbname=mw --dbpass=changethis --installdbuser=root --installdbpass= --pass=changethis MW admin
+      php /var/www/html/w/maintenance/install.php --scriptpath=/w --dbname=mw --dbuser=mw --dbpass=changethis --installdbuser=root --installdbpass= --pass=changethis MW admin
       creates=/var/www/html/w/LocalSettings.php
 - name: Change user & group of LocalSettings.php
   file:
     path=/var/www/html/w/LocalSettings.php
     owner=www-data
     group=www-data
-## After downloading the LocalSettings.php file, copy it to the wiki folder:
-#cp ~/Downloads/LocalSettings.php .
-#
 ## Enter your new wiki:
 #firefox http://localhost/mw123/
 #
