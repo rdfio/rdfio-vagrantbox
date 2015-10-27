@@ -4,4 +4,12 @@
     url=http://releases.wikimedia.org/mediawiki/{{mwver_major}}/mediawiki-{{mwver_minor}}.tar.gz 
     dest=/vagrant/mediawiki-{{mwver_minor}}.tar.gz
     mode=0440
-
+- name: Unpack MediaWiki tarball
+  unarchive:
+    src=/vagrant/mediawiki-{{mwver_minor}}.tar.gz
+    dest=/var/www/html
+    copy=no # Don't copy from local machine
+- name: Rename MediaWiki folder
+  command:
+    creates=/var/www/html/w
+    mv /var/www/html/mediawiki-{{mwver_minor}} /var/www/html/w
