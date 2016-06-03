@@ -6,14 +6,21 @@
     <revision>
       <id>3</id>
       <parentid>2</parentid>
-      <timestamp>2016-06-03T22:00:00Z</timestamp>
+      <timestamp>2016-06-03T23:00:00Z</timestamp>
       <contributor>
         <username>Admin</username>
         <id>1</id>
       </contributor>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve">MediaWiki, Semantic MediaWiki and RDFIO successfully installed!</text>
+      <text xml:space="preserve">MediaWiki, Semantic MediaWiki and RDFIO successfully installed!
+
+Now please follow these steps:
+
+# Please go to the [[Special:RDFIOAdmin|RDFIO Admin Special Page]] and ensure that the ARC2 store is properly set up.</text>
+# Go to the [[Special:RDFImport|RDF Import Special Page]], click "Paste RDF", and then "RDFXML example data" under the text field, and import it.
+# GO to [[Special:RecentChanges|Recent Changes]], to see if you got some newly imported data.
+# Finally, go to the [[Special:SPARQLEndpoint|SPARQL Endpoint]] and execute the example query, and see if you can see the example data show up!
     </revision>
   </page>
   <page>
@@ -22,7 +29,7 @@
     <id>5</id>
     <revision>
       <id>5</id>
-      <timestamp>2016-06-03T22:00:00Z</timestamp>
+      <timestamp>2016-06-03T23:00:00Z</timestamp>
       <contributor>
         <username>Admin</username>
         <id>1</id>
@@ -36,6 +43,7 @@
 ** randompage-url|randompage
 ** helppage|help
 * Semantic Tools
+** Special:RDFIOAdmin|RDFIO Admin
 ** Special:RDFImport|RDF Import
 ** Special:SPARQLEndpoint|SPARQL Endpoint
 ** Special:SPARQLImport|SPARQL Import
