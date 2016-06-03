@@ -1,3 +1,4 @@
 ---
-smwver_major: '1.9'
+smwver_major: '2.3'
+smwver_minor: '2.3.1'
 mw_dir: '/var/www/html/w'

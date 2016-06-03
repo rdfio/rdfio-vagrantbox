@@ -1,0 +1,47 @@
+<mediawiki>
+  <page>
+    <title>Main Page</title>
+    <ns>0</ns>
+    <id>1</id>
+    <revision>
+      <id>3</id>
+      <parentid>2</parentid>
+      <timestamp>2016-06-03T22:00:00Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">MediaWiki, Semantic MediaWiki and RDFIO successfully installed!</text>
+    </revision>
+  </page>
+  <page>
+    <title>MediaWiki:Sidebar</title>
+    <ns>8</ns>
+    <id>5</id>
+    <revision>
+      <id>5</id>
+      <timestamp>2016-06-03T22:00:00Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <comment>Add links to RDFIO tools</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">* navigation
+** mainpage|mainpage-description
+** recentchanges-url|recentchanges
+** randompage-url|randompage
+** helppage|help
+* Semantic Tools
+** Special:RDFImport|RDF Import
+** Special:SPARQLEndpoint|SPARQL Endpoint
+** Special:SPARQLImport|SPARQL Import
+* SEARCH
+* TOOLBOX
+* LANGUAGES</text>
+    </revision>
+  </page>
+</mediawiki>

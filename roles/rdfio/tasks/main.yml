@@ -1,47 +1,36 @@
 ---
-### Go to the RDFIO page:
-###firefox http://www.mediawiki.org/wiki/Extension:RDFIO
-###
-#### Install the dependency, Wiki Object Model:
-###cd extensions
-###svn checkout http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/WikiObjectModel
-###
-#### Add the following line to LocalSettings.php:
-###include_once("$IP/extensions/WikiObjectModel/WikiObjectModel.php");
-###
-#### You can alternatively just run this command:
-###echo 'include_once("$IP/extensions/WikiObjectModel/WikiObjectModel.php");' >> LocalSettings.php
-###
-#### Install dependency #2: ARC2:
-###cd extensions/SemanticMediaWiki
-###mkdir libs
-###cd libs
-###git clone https://github.com/semsol/arc2.git arc
-###
-#### Install RDFIO
-###cd wiki/extensions
-###git clone https://github.com/samuell/RDFIO.git
-###
-#### Add the following lines to your LocalSettings.php:
-###include_once("$IP/extensions/RDFIO/RDFIO.php");
-###$smwgOWLFullExport = true;
-###
-#### Alternatively, just run this command:
-###echo 'include_once("$IP/extensions/RDFIO/RDFIO.php");' >> LocalSettings.php
-###echo '$smwgOWLFullExport = true;' >> LocalSettings.php
-###
-#### Log in to your wiki as a super user
-###
-#### Open the page MediaWiki:Sidebar
-###firefox http://localhost/mw123/MediaWiki:Sidebar
-###
-#### Edit the page and paste the following code, and save:
-###* Semantic Tools
-###** Special:ARC2Admin|ARC2 Admin
-###** Special:RDFImport|RDF Import
-###** Special:SPARQLEndpoint|SPARQL Endpoint
-###** Special:SPARQLImport|SPARQL Import
-###
+- name: Check out the WikiObjectModel extension
+  git:
+    repo=https://github.com/wikimedia/mediawiki-extensions-WikiObjectModel.git
+    dest={{ mw_dir }}/extensions/WikiObjectModel
+- name: Activate WikiObjectModel in MediaWiki settings file
+  lineinfile:
+    line='include_once("$IP/extensions/WikiObjectModel/WikiObjectModel.php");'
+    dest={{ mw_dir }}/LocalSettings.php
+    state=present
+- name: Install ARC2
+  composer:
+    command=require
+    arguments="semsol/arc2 v2.2.4 --update-no-dev"
+    working_dir={{ mw_dir }}
+- name: Check out the RDFIO
+  git:
+    repo=https://github.com/samuell/RDFIO.git
+    dest={{ mw_dir }}/extensions/RDFIO
+    version=update-to-latest-mw-smw
+- name: Activate RDFIO in MediaWiki settings file
+  lineinfile:
+    line='include_once("$IP/extensions/RDFIO/RDFIO.php");'
+    dest={{ mw_dir }}/LocalSettings.php
+    state=present
+- name: Activate full OWL export, as needed by RDFIO
+  lineinfile:
+    line='$smwgOWLFullExport = true;'
+    dest={{ mw_dir }}/LocalSettings.php
+    state=present
+- name: Import some initial wiki content
+  shell: >
+    /usr/bin/php {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
 #### Go to the Special:ARC2Admin page, and hit the "install" button
 ###firefox http://localhost/mw123/Special:Arc2Store
 ###
