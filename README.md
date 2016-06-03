@@ -7,9 +7,34 @@ for setting up development environment for developing RDFIO.
 
 ## Prerequisites
 
-* Vagrant
-* Ansible
-* SSH client
+### [Virtualbox](https://www.virtualbox.org/)
+
+Install on Ubuntu 16.04 with:
+
+```
+sudo apt-get install virtualbox
+```
+
+### [Vagrant](https://www.vagrantup.com/)
+
+Install on Ubuntu 16.04 by [downloading the debian installer](https://www.vagrantup.com/downloads.html) and installing it:
+
+```
+wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.deb
+sudo dpkg -i vagrant_1.8.1_x86_64.deb
+```
+
+### [Ansible](https://www.ansible.com/)
+
+Install on Ubuntu 16.04 with:
+
+```
+sudo apt-get install ansible
+```
+
+### SSH client
+
+(Already included in linux and OS X)
 
 ## How to:
 
@@ -32,7 +57,7 @@ vagrant up virtualbox
 
 Surf in to your new MediaWiki installation on:
 
-* http://localhost:8080/w
+* [localhost:8080/w](http://localhost:8080/w)
 
 ## STATUS
 
