@@ -38,9 +38,9 @@
     path=/var/www/html/w/LocalSettings.php
     owner=www-data
     group=www-data
-## Enter your new wiki:
-#firefox http://localhost/mw123/
-#
+- name: Print location of wiki
+  debug:
+    msg: "You can see your wiki, by entering in a browser: http://localhost:8080/w"
 ## Head over to the SMW website:
 #firefox http://semantic-mediawiki.org
 ## Click the "orange button" saying "SMW 1.9.2"
