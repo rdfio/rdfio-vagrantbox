@@ -42,5 +42,5 @@ In more detailed terms:
 
 - [x] Install PHP
 - [x] Install MediaWiki
-- [ ] Install Semantic MediaWiki
+- [x] Install Semantic MediaWiki
 - [ ] Install RDFIO
