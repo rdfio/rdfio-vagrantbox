@@ -82,4 +82,9 @@ In more detailed terms:
 - [x] Install PHP
 - [x] Install MediaWiki
 - [x] Install Semantic MediaWiki
-- [ ] Install RDFIO
+- [x] Install RDFIO
+
+## Known issues
+
+- If you try to run `vagrant provision` after running `vagrant up`, and haven't
+  run the ARC2 setup via the wiki interface, you will get fat red errors.
