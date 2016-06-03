@@ -4,3 +4,15 @@
     command: "require"
     arguments: "mediawiki/semantic-media-wiki ~{{ smwver_major }}"
     working_dir: "{{ mw_dir }}"
+- name: Update MediaWiki database
+  command: php {{ mw_dir }}/maintenance/update.php
+- name: Enable Semantic MediaWiki in MediaWiki settings file
+  lineinfile:
+    line="enableSemantics( 'localhost' );"
+    dest={{ mw_dir }}/LocalSettings.php
+    state=present
+- name: Enable the Factbox to be shown on pages with semantic content
+  lineinfile:
+    line="$smwgShowFactbox = SMW_FACTBOX_NONEMPTY;"
+    dest={{ mw_dir }}/LocalSettings.php
+    state=present
