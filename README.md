@@ -1,8 +1,15 @@
 # DevBox-RDFIO
-*Vagrant box backed by Docker or Virtualbox, with Ansible provisioning*
 
-A Vagrant box (Virtualbox or Docker as providers) with Ansible provisioning
-for setting up development environment for developing RDFIO.
+A [Vagrant](https://www.vagrantup.com/) box with
+[Ansible](https://www.ansible.com/) provisioning for setting up a local
+development environment in a virtual machine, for developing the
+[RDFIO](https://github.com/rdfio/RDFIO) extension to
+[MediaWiki](https://www.mediawiki.org) / [Semantic MediaWiki](https://www.semantic-mediawiki.org).
+
+The fact that Ansible is used for provisioning, means that the installation
+instructions are easy to understand and change, and that they can be equally
+well installed elsewhere too, not just in a virtual machine on the local
+computer.
 
 
 ## Prerequisites
@@ -52,12 +59,19 @@ cd devbox-rdfio
 ... and let vagrant take care of the rest:
 
 ```bash
-vagrant up virtualbox
+vagrant up
 ```
 
 Surf in to your new MediaWiki installation on:
 
 * [localhost:8080/w](http://localhost:8080/w)
+
+... or SSH in to your machine, and entering the wiki installation folder:
+
+```bash
+vagrant ssh
+cd /var/www/html/w
+```
 
 ## STATUS
 
