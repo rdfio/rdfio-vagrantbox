@@ -1,4 +1,7 @@
 ---
+- name: Import some initial wiki content
+  shell: >
+    /usr/bin/php {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
 - name: Check out the WikiObjectModel extension
   git:
     repo=https://github.com/wikimedia/mediawiki-extensions-WikiObjectModel.git
@@ -15,9 +18,9 @@
     working_dir={{ mw_dir }}
 - name: Check out the RDFIO
   git:
-    repo=https://github.com/rdfio/RDFIO.git
+    repo=https://github.com/samuell/RDFIO.git
     dest={{ mw_dir }}/extensions/RDFIO
-    version=v1.9.7
+    version=SMW_2.3
 - name: Activate RDFIO in MediaWiki settings file
   lineinfile:
     line='include_once("$IP/extensions/RDFIO/RDFIO.php");'
@@ -28,6 +31,12 @@
     line='$smwgOWLFullExport = true;'
     dest={{ mw_dir }}/LocalSettings.php
     state=present
-- name: Import some initial wiki content
-  shell: >
-    /usr/bin/php {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
+- name: Change user & group for wiki folder
+  file:
+    path=/var/www/html/w
+    owner=www-data
+    group=www-data
+    recurse=yes
+- name: Print location of wiki
+  debug:
+    msg: "You can see your wiki, by entering in a browser: http://localhost:8080/w"
