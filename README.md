@@ -11,6 +11,7 @@ instructions are easy to understand and change, and that they can be equally
 well installed elsewhere too, not just in a virtual machine on the local
 computer.
 
+![RDFIO screenshot showing the in-built SPARQL endpoint](http://i.imgur.com/PMMIHZ4.png)
 
 ## Prerequisites
 
