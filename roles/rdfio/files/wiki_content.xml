@@ -48,6 +48,8 @@ Now please follow these steps:
 ** Special:RDFImport|RDF Import
 ** Special:SPARQLEndpoint|SPARQL Endpoint
 ** Special:SPARQLImport|SPARQL Import
+** Special:Categories|Categories
+** Special:Properties|Properties
 * SEARCH
 * TOOLBOX
 * LANGUAGES</text>
