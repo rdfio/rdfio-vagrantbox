@@ -13,5 +13,6 @@
     - php5-json
     - php5-xsl
     - php-apc
+    - phpunit
     - composer
   notify: restart apache2
