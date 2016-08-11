@@ -27,6 +27,8 @@
          - python-mysqldb
   roles:
       - dotfiles
+      - apache
+      - mysql
       - php
       - mediawiki
       - semantic_mediawiki

@@ -2,8 +2,6 @@
 - name: Install stuff from Aptitude
   apt: name={{ item }} state=installed
   with_items:
-    - apache2
-    - mysql-server
     - php5 
     - libapache2-mod-php5
     - php5-mysql
