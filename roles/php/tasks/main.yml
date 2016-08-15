@@ -21,8 +21,11 @@
   apt: name={{ item }} state=installed
   with_items:
     - hhvm
-- name: Run HHVM Fast CGI install script
-  shell: bash /usr/share/hhvm/install_fastcgi.sh
+- name: Link php commandline command to HHVM
+  alternatives:
+    name=php
+    link=/usr/bin/php
+    path=/usr/bin/hhvm
 - name: Add custom Nginx sites/default config file
   copy:
       src=nginx-sites-default
