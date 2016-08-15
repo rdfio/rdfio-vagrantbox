@@ -1,11 +1,11 @@
 ---
 - name: Install Semantic MediaWiki via composer
-  composer: 
+  composer:
     command: "require"
     arguments: "mediawiki/semantic-media-wiki ~{{ smwver_major }} --update-no-dev"
     working_dir: "{{ mw_dir }}"
 - name: Update MediaWiki database
-  command: php {{ mw_dir }}/maintenance/update.php
+  command: hhvm {{ mw_dir }}/maintenance/update.php
 - name: Enable Semantic MediaWiki in MediaWiki settings file
   lineinfile:
     line="enableSemantics( 'localhost' );"

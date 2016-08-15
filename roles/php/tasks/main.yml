@@ -2,17 +2,35 @@
 - name: Install stuff from Aptitude
   apt: name={{ item }} state=installed
   with_items:
-    - apache2
+    - nginx
     - mysql-server
-    - php5 
-    - libapache2-mod-php5
-    - php5-mysql
-    - php5-cli
-    - php5-gd
-    - php5-xdebug
-    - php5-json
-    - php5-xsl
-    - php-apc
-    - phpunit
+    - software-properties-common # Needed for HHVM install
     - composer
-  notify: restart apache2
+- name: Add HHVM repo key
+  apt_key:
+      keyserver=keyserver.ubuntu.com
+      id=0x5a16e7281be7a449
+- name: Add HHVM apt repo
+  apt_repository:
+      repo='deb http://dl.hhvm.com/ubuntu wily main'
+      state=present
+- name: Update apt cache after HHVM repo added
+  apt:
+      update_cache=yes
+- name: Install HHVM
+  apt: name={{ item }} state=installed
+  with_items:
+    - hhvm
+- name: Run HHVM Fast CGI install script
+  shell: bash /usr/share/hhvm/install_fastcgi.sh
+- name: Add custom Nginx sites/default config file
+  copy:
+      src=nginx-sites-default
+      dest=/etc/nginx/sites-enabled/default
+      owner=root
+      group=root
+      mode='u=rw,g=r,o=r'
+- name: Restart Nginx
+  service:
+      name=nginx
+      state=restarted
