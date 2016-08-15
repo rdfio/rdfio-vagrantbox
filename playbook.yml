@@ -26,8 +26,8 @@
          - man-db
          - python-mysqldb
   roles:
-      - dotfiles
-      - php
-      - mediawiki
-      - semantic_mediawiki
-      - rdfio
+      - { role: dotfiles, tags: ['dotfiles'] }
+      - { role: php, tags: ['php'] }
+      - { role: mediawiki, tags: ['mediawiki'] }
+      - { role: semantic_mediawiki, tags: ['semantic_mediawiki'] }
+      - { role: rdfio, tags: ['rdfio'] }

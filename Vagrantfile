@@ -17,6 +17,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vbox.vm.network "forwarded_port", guest: 80, host: 8080
     vbox.vm.provision :ansible do |ansible|
       ansible.playbook = "playbook.yml"
+      #Uncomment selected lines to provision specific tags
+      #ansible.tags = ['dotfiles']
+      #ansible.tags = ['php']
+      #ansible.tags = ['mediawiki']
+      #ansible.tags = ['semantic_mediawiki']
+      #ansible.tags = ['rdfio']
     end
     # Tell the user what to do next
 	vbox.vm.provision "shell", inline: "echo 'Finished! Now try logging in with: vagrant ssh virtualbox'"
