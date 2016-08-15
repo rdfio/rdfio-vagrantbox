@@ -40,4 +40,4 @@
     group=www-data
 - name: Print location of wiki
   debug:
-    msg: "You can see your wiki, by entering in a browser: http://localhost:8080/w"
+    msg: "You can see your wiki, by entering in a browser: http://localhost:8080/w/index.php/Main_Page"
