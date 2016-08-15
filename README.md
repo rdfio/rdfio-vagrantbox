@@ -69,12 +69,12 @@ Surf in to your new MediaWiki installation on:
 
 ... or SSH in to your machine, and entering the wiki installation folder:
 
-Log in with Admin and changethis
+Log in with "Admin" and "changethis"
 
 Finally, you need to click a button in the web interface, to set up the ARC2 store database tables:
 
 1. Navigate to [localhost:8080/w/index.php/Special:RDFIOAdmin](http://localhost:8080/w/index.php/Special:RDFIOAdmin)
-2. Click the "set up store" button
+2. Click the "store" button
 
 ```bash
 vagrant ssh
