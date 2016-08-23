@@ -1,0 +1,39 @@
+# Config
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+
+	index index.php index.hh index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+	include hhvm.conf;
+
+	location / {
+		try_files $uri $uri/ =404;
+		# MediaWiki specific stuff
+		if (!-e $request_filename) {
+			rewrite  ^/w/index.php/(.+)$  /w/index.php?title=$1 last;
+			break;
+		}
+	}
+
+	location ~ /\.ht {
+		deny  all;
+	}
+
+	location ~ \.(hh|php)$ {
+	    fastcgi_keep_conn on;
+	    fastcgi_pass   127.0.0.1:9000;
+	    fastcgi_index  index.php;
+	    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+	    include        fastcgi_params;
+	}
+
+	# deny access to .htaccess files, if Apache's document root
+	# concurs with nginx's one
+	location ~ /\.ht {
+		deny all;
+	}
+}
