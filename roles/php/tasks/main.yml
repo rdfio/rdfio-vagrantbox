@@ -6,6 +6,7 @@
     - mysql-server
     - software-properties-common # Needed for HHVM install
     - composer
+    - php5-cli
 - name: Add HHVM repo key
   apt_key:
       keyserver=keyserver.ubuntu.com
@@ -21,11 +22,11 @@
   apt: name={{ item }} state=installed
   with_items:
     - hhvm
-- name: Link php commandline command to HHVM
-  alternatives:
-    name=php
-    link=/usr/bin/php
-    path=/usr/bin/hhvm
+#- name: Link php commandline command to HHVM
+#  alternatives:
+#    name=php
+#    link=/usr/bin/php
+#    path=/usr/bin/hhvm
 - name: Add custom Nginx sites/default config file
   copy:
       src=nginx-sites-default
