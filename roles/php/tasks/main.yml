@@ -22,6 +22,11 @@
   apt: name={{ item }} state=installed
   with_items:
     - hhvm
+- name: Configure HHVM service
+  service: name=hhvm state=started
+- name: Make HHVM start automatically on startup
+  shell: update-rc.d hhvm defaults
+      creates=/etc/rc0.d/K01hhvm
 #- name: Link php commandline command to HHVM
 #  alternatives:
 #    name=php
