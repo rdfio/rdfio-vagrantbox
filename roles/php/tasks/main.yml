@@ -7,6 +7,7 @@
     - software-properties-common # Needed for HHVM install
     - composer
     - php5-cli
+    - php5-mysql
 - name: Add HHVM repo key
   apt_key:
       keyserver=keyserver.ubuntu.com
