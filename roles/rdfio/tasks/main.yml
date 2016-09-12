@@ -38,4 +38,4 @@
     group=www-data
     recurse=yes
 - name: Inform about manual steps needed to complete installation
-  debug: "msg='MANUAL STEPS NEEDED TO COMPLETE INSTALLATION: 1. Visit this page on the wiki: http://localhost:8080/w/index.php/Special:RDFIOAdmin, 2. Click the Setup button.'"
+  debug: "msg='MANUAL STEPS NEEDED TO COMPLETE INSTALLATION: 1. Visit this page on the wiki: http://localhost:8080/w/index.php/Special:RDFIOAdmin, 2. Login with 'Admin' and 'changethis' 3. Click the Setup button.'"
