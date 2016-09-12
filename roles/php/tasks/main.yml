@@ -38,7 +38,7 @@
       dest=/etc/nginx/sites-enabled/default
       owner=root
       group=root
-      mode='u=rw,g=r,o=r'
+      mode=0644
 - name: Restart Nginx
   service:
       name=nginx
