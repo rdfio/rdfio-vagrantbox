@@ -34,6 +34,8 @@ sudo dpkg -i vagrant_1.8.1_x86_64.deb
 
 ### [Ansible](https://www.ansible.com/)
 
+**N.B:** Probably needs Ansible 2.x or higher! (Tested with 2.0.2, but does **Not** work with 1.7.2!)
+
 Install on Ubuntu 16.04 with:
 
 ```
