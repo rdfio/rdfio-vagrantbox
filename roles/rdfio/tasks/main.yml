@@ -1,7 +1,7 @@
 ---
 - name: Import some initial wiki content
   shell: >
-    hhvm {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
+    php {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
 - name: Check out the WikiObjectModel extension
   git:
     repo=https://github.com/wikimedia/mediawiki-extensions-WikiObjectModel.git
