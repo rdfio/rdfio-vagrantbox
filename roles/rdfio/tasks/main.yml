@@ -18,9 +18,8 @@
     working_dir={{ mw_dir }}
 - name: Check out the RDFIO
   git:
-    repo=https://github.com/samuell/RDFIO.git
+    repo=https://github.com/rdfio/RDFIO.git
     dest={{ mw_dir }}/extensions/RDFIO
-    version=SMW_2.3
 - name: Activate RDFIO in MediaWiki settings file
   lineinfile:
     line='include_once("$IP/extensions/RDFIO/RDFIO.php");'
