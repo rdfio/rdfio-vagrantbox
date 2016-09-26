@@ -1,4 +1,4 @@
-# DevBox-RDFIO
+# RDFIO Vagrant box
 
 A [Vagrant](https://www.vagrantup.com/) box with
 [Ansible](https://www.ansible.com/) provisioning for setting up a local
