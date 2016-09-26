@@ -16,10 +16,11 @@
     command=require
     arguments="semsol/arc2 v2.2.4 --update-no-dev"
     working_dir={{ mw_dir }}
-- name: Check out the RDFIO
+- name: Check out the RDFIO (Until fixed in main repo, need to use a hotfix-branch)
   git:
-    repo=https://github.com/rdfio/RDFIO.git
+    repo=https://github.com/samuell/RDFIO.git
     dest={{ mw_dir }}/extensions/RDFIO
+    version=pr-remove-legacy-arc2-location
 - name: Activate RDFIO in MediaWiki settings file
   lineinfile:
     line='include_once("$IP/extensions/RDFIO/RDFIO.php");'
