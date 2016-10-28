@@ -4,6 +4,7 @@
   vars:
       home: /home/vagrant
       document_root: /vagrant
+      mw_dir: /var/www/html/w
   pre_tasks:
       - name: Symlink sh to bash rather than dash
         file: src=/bin/bash dest=/bin/sh state=link force=true
