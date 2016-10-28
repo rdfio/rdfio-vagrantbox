@@ -13,28 +13,39 @@ computer.
 
 ![RDFIO screenshot showing the in-built SPARQL endpoint](http://i.imgur.com/PMMIHZ4.png)
 
+# Installation
+
 ## Prerequisites
 
-### [Virtualbox](https://www.virtualbox.org/)
+The vagrant box requires the following softwares in order to set it up:
+
+- [Virtualbox](https://www.virtualbox.org/)
+- [Vagrant](https://www.vagrantup.com/)
+- [Ansible](https://www.ansible.com/)
+- An SSH Client
+
+For Ubuntu 16.04, we provide brief installation instructions for them below:
+
+### Virtualbox
 
 Install on Ubuntu 16.04 with:
 
-```
+```bash
 sudo apt-get install virtualbox
 ```
 
-### [Vagrant](https://www.vagrantup.com/)
+### Vagrant
 
 Install on Ubuntu 16.04 by [downloading the debian installer](https://www.vagrantup.com/downloads.html) and installing it:
 
-```
+```bash
 wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.deb
 sudo dpkg -i vagrant_1.8.1_x86_64.deb
 ```
 
-### [Ansible](https://www.ansible.com/)
+### Ansible
 
-**N.B:** Probably needs Ansible 2.x or higher! (Tested with 2.0.2, but does **Not** work with 1.7.2!)
+**N.B:** Probably needs Ansible 2.x or higher! (Works well with 2.0.2, but **not** 1.7.2)
 
 Install on Ubuntu 16.04 with:
 
@@ -46,9 +57,9 @@ sudo apt-get install ansible
 
 (Already included in linux and OS X)
 
-## How to:
+## Set up the Vagrant box
 
-Clone the repo:
+Clone this repo:
 
 ```bash
 git clone https://github.com/samuell/devbox-rdfio
@@ -69,14 +80,12 @@ Surf in to your new MediaWiki installation on:
 
 * [localhost:8080/w](http://localhost:8080/w)
 
-
 Log in with "Admin" and "changethis"
 
 Finally, you need to click a button in the web interface, to set up the ARC2 store database tables:
 
 1. Navigate to [localhost:8080/w/index.php/Special:RDFIOAdmin](http://localhost:8080/w/index.php/Special:RDFIOAdmin)
-2. Click the "store" button
-
+2. Click the "setup" button
 
 To see the MediaWiki installation via the commandline, you can SSH in to your machine and enter the wiki installation folder like so:
 
@@ -87,7 +96,7 @@ cd /var/www/html/w
 
 ## STATUS
 
-In general: Things should work now, apart from any issues in [the issue tracker](https://github.com/rdfio/RDFIO/issues)
+Things should work now, apart from any issues in [the issue tracker](https://github.com/rdfio/RDFIO/issues)
 
 ## Known issues
 
