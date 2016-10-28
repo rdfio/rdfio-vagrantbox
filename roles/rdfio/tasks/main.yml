@@ -2,30 +2,11 @@
 - name: Import some initial wiki content
   shell: >
     php {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
-- name: Check out the WikiObjectModel extension
-  git:
-    repo=https://github.com/wikimedia/mediawiki-extensions-WikiObjectModel.git
-    dest={{ mw_dir }}/extensions/WikiObjectModel
-- name: Activate WikiObjectModel in MediaWiki settings file
-  lineinfile:
-    line='include_once("$IP/extensions/WikiObjectModel/WikiObjectModel.php");'
-    dest={{ mw_dir }}/LocalSettings.php
-    state=present
-- name: Install ARC2
+- name: Install RDFIO including dependencies via composer
   composer:
     command=require
-    arguments="semsol/arc2 v2.2.4 --update-no-dev"
+    arguments="rdfio/rdfio"
     working_dir={{ mw_dir }}
-- name: Check out the RDFIO (Until fixed in main repo, need to use a hotfix-branch)
-  git:
-    repo=https://github.com/samuell/RDFIO.git
-    dest={{ mw_dir }}/extensions/RDFIO
-    version=pr-remove-legacy-arc2-location
-- name: Activate RDFIO in MediaWiki settings file
-  lineinfile:
-    line='include_once("$IP/extensions/RDFIO/RDFIO.php");'
-    dest={{ mw_dir }}/LocalSettings.php
-    state=present
 - name: Activate full OWL export, as needed by RDFIO
   lineinfile:
     line='$smwgOWLFullExport = true;'
