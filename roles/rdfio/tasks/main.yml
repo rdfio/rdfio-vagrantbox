@@ -5,7 +5,7 @@
 - name: Install RDFIO including dependencies via composer
   composer:
     command=require
-    arguments="rdfio/rdfio"
+    arguments="rdfio/rdfio --update-no-dev"
     working_dir={{ mw_dir }}
 - name: Activate full OWL export, as needed by RDFIO
   lineinfile:
