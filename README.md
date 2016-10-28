@@ -87,14 +87,7 @@ cd /var/www/html/w
 
 ## STATUS
 
-In general: Work in progress!
-
-In more detailed terms:
-
-- [x] Install PHP
-- [x] Install MediaWiki
-- [x] Install Semantic MediaWiki
-- [x] Install RDFIO
+In general: Things should work now, apart from any issues in [the issue tracker](https://github.com/rdfio/RDFIO/issues)
 
 ## Known issues
 
