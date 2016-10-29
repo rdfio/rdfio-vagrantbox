@@ -19,4 +19,4 @@
   shell: cd {{ mw_dir }}/extensions/Rdfio/maintenance; hhvm setupStore.php;
 - name: Import some initial wiki content
   shell: >
-    hhvm {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
+    php {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
