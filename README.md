@@ -49,7 +49,7 @@ sudo dpkg -i vagrant_1.8.1_x86_64.deb
 
 Install on Ubuntu 16.04 with:
 
-```
+```bash
 sudo apt-get install ansible
 ```
 
