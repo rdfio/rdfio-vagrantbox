@@ -80,12 +80,9 @@ Surf in to your new MediaWiki installation on:
 
 * [localhost:8080/w](http://localhost:8080/w)
 
-Log in with "Admin" and "changethis"
+Log in with "Admin" and "changethis".
 
-Finally, you need to click a button in the web interface, to set up the ARC2 store database tables:
-
-1. Navigate to [localhost:8080/w/index.php/Special:RDFIOAdmin](http://localhost:8080/w/index.php/Special:RDFIOAdmin)
-2. Click the "setup" button
+Done!
 
 To see the MediaWiki installation via the commandline, you can SSH in to your machine and enter the wiki installation folder like so:
 
