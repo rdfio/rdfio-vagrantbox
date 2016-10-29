@@ -22,7 +22,7 @@ The vagrant box requires the following softwares in order to set it up:
 - [Virtualbox](https://www.virtualbox.org/)
 - [Vagrant](https://www.vagrantup.com/)
 - [Ansible](https://www.ansible.com/)
-- An SSH Client
+- An SSH Client (Already included in Linux and OS/X)
 
 For Ubuntu 16.04, we provide brief installation instructions for them below:
 
@@ -53,21 +53,17 @@ Install on Ubuntu 16.04 with:
 sudo apt-get install ansible
 ```
 
-### SSH client
-
-(Already included in linux and OS X)
-
-## Set up the Vagrant box
+## Bring up the Vagrant box
 
 Clone this repo:
 
 ```bash
-git clone https://github.com/samuell/devbox-rdfio
+git clone https://github.com/rdfio/rdfio-vagrantbox
 ```
 Enter the cloned folder:
 
 ```bash
-cd devbox-rdfio
+cd rdfio-vagrantbox
 ```
 
 ... and let vagrant take care of the rest:
