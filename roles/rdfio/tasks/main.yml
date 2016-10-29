@@ -1,7 +1,4 @@
 ---
-- name: Import some initial wiki content
-  shell: >
-    php {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
 - name: Change user & group for wiki folder
   file:
     path=/var/www/html/w
@@ -20,5 +17,6 @@
     state=present
 - name: Set up ARC2 tables (taking some time because of HHVM jit compiling ...)
   shell: cd {{ mw_dir }}/extensions/Rdfio/maintenance; hhvm setupStore.php;
-#- name: Inform about manual steps needed to complete installation
-#  debug: "msg='MANUAL STEPS NEEDED TO COMPLETE INSTALLATION: 1. Visit this page on the wiki: http://localhost:8080/w/index.php/Special:RDFIOAdmin, 2. Login with 'Admin' and 'changethis' 3. Click the Setup button.'"
+- name: Import some initial wiki content
+  shell: >
+    hhvm {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
