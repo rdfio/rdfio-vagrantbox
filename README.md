@@ -94,8 +94,3 @@ cd /var/www/html/w
 ## STATUS
 
 Things should work now, apart from any issues in [the issue tracker](https://github.com/rdfio/RDFIO/issues)
-
-## Known issues
-
-- If you try to run `vagrant provision` after running `vagrant up`, and haven't
-  run the ARC2 setup via the wiki interface, you will get fat red errors.
