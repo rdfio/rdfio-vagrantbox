@@ -8,7 +8,7 @@
   command: hhvm {{ mw_dir }}/maintenance/update.php
 - name: Enable Semantic MediaWiki in MediaWiki settings file
   lineinfile:
-    line="enableSemantics( 'localhost' );"
+    line="enableSemantics( 'localhost:8080' );"
     dest={{ mw_dir }}/LocalSettings.php
     state=present
 - name: Enable the Factbox to be shown on pages with semantic content
