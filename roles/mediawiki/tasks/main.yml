@@ -15,13 +15,13 @@
     mv /var/www/html/mediawiki-{{mwver_minor}} /var/www/html/w
 - name: Create MySQL database
   mysql_db:
-    name=mw
+    name=smw
     state=present
 - name: Create MySQL user
   mysql_user:
-    name=mw
+    name=smw
     password=changethis
-    priv=mw.*:ALL
+    priv=smw.*:ALL
     state=present
 - name: Change user & group for wiki folder
   file:
@@ -31,7 +31,7 @@
     recurse=yes
 - name: Install MediaWiki database
   command:
-      hhvm /var/www/html/w/maintenance/install.php --scriptpath=/w --dbname=mw --dbuser=mw --dbpass=changethis --installdbuser=root --installdbpass= --pass=changethis MW admin
+      hhvm /var/www/html/w/maintenance/install.php --scriptpath=/w --dbname=smw --dbuser=smw --dbpass=changethis --installdbuser=root --installdbpass= --pass=changethis MW admin
       creates=/var/www/html/w/LocalSettings.php
 - name: Change user & group of LocalSettings.php
   file:
