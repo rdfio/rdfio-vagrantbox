@@ -2,7 +2,7 @@
 - name: Install Semantic MediaWiki via composer
   composer:
     command: "require"
-    arguments: "mediawiki/semantic-media-wiki {{ smwver_minor }}"
+    arguments: "mediawiki/semantic-media-wiki {{ smwver_major }}.*"
     working_dir: "{{ mw_dir }}"
 - name: Update MediaWiki database
   command: hhvm {{ mw_dir }}/maintenance/update.php
