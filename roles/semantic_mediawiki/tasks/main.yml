@@ -16,14 +16,14 @@
     line="$smwgShowFactbox = SMW_FACTBOX_NONEMPTY;"
     dest={{ mw_dir }}/LocalSettings.php
     state=present
-- name: Create folder for SemanticForms
+- name: Create folder for PageForms
   file:
-      dest={{ mw_dir }}/extensions/SemanticForms
+      dest={{ mw_dir }}/extensions/PageForms
       state=directory
-- name: Checkout Semantic Forms via git
+- name: Checkout Page Forms via git
   git:
-      repo=https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SemanticForms
-      dest={{ mw_dir }}/extensions/SemanticForms
+      repo=https://gerrit.wikimedia.org/r/p/mediawiki/extensions/PageForms
+      dest={{ mw_dir }}/extensions/PageForms
       update=yes
 #- name: Download Semantic Forms zip file
 #  get_url:
@@ -35,8 +35,8 @@
 #      src={{ mw_dir }}/extensions/semantic_forms_3.6.zip
 #      dest={{ mw_dir }}/extensions/SemanticForms
 #      copy=no
-- name: Enable Semantic Forms in MediaWiki settings file
+- name: Enable Page Forms in MediaWiki settings file
   lineinfile:
-    line='include_once "$IP/extensions/SemanticForms/SemanticForms.php";'
+    line='include_once "$IP/extensions/PageForms/PageForms.php";'
     dest={{ mw_dir }}/LocalSettings.php
     state=present
