@@ -23,9 +23,9 @@ nmap <C-N> :noh <CR>
 " Use jj to get out of insert mode
 imap jj <Esc>
 " Remap Ctrl + Z to save, in all modes
-noremap <silent> <C-Z>      :update<CR>
-vnoremap <silent> <C-Z>     :<C-C>:update<CR>
-inoremap <silent> <C-Z>     <C-[>:update<CR>
+noremap <silent> <C-W>      :update<CR>
+vnoremap <silent> <C-W>     :<C-C>:update<CR>
+inoremap <silent> <C-W>     <C-[>:update<CR>
 " --------------------------------------------
 
 " --------------------------------------------
