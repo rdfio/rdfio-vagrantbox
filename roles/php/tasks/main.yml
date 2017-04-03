@@ -8,6 +8,7 @@
     - composer
     - php5-cli
     - php5-mysql
+    - php5-xdebug
     - phpunit
 - name: Add HHVM repo key
   apt_key:
