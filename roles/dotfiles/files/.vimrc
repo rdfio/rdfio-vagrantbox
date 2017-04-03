@@ -42,3 +42,7 @@ nmap <c-l> 4l
 " --------------------------------------------
 execute pathogen#infect()
 filetype plugin indent on
+" --------------------------------------------
+" MediaWiki PHP Coding Conventions
+" --------------------------------------------
+autocmd Filetype php setlocal ts=4 sw=4
