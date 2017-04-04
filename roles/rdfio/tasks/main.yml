@@ -1,7 +1,7 @@
 ---
 - name: Change user & group for wiki folder
   file:
-    path=/var/www/html/w
+    path=/vagrant/w
     owner=vagrant
     group=www-data
     recurse=yes

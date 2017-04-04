@@ -7,12 +7,19 @@
 - name: Unpack MediaWiki tarball
   unarchive:
     src=/vagrant/mediawiki-{{mwver_minor}}.tar.gz
-    dest=/var/www/html
+    dest=/vagrant
     copy=no # Don't copy from local machine
-- name: Rename MediaWiki folder
+- name: Rename unarchived MediaWiki folder (to w)
   command:
-    creates=/var/www/html/w
-    mv /var/www/html/mediawiki-{{mwver_minor}} /var/www/html/w
+    creates=/vagrant/w
+    mv /vagrant/mediawiki-{{mwver_minor}} /vagrant/w
+- name: Symlink MediaWiki folder into webserver folder
+  file:
+    src=/vagrant/w
+    dest=/var/www/html/w
+    state=link
+    owner=vagrant
+    group=vagrant
 - name: Create MySQL database
   mysql_db:
     name=smw
@@ -25,7 +32,7 @@
     state=present
 - name: Change user & group for wiki folder
   file:
-    path=/var/www/html/w
+    path=/vagrant/w
     owner=www-data
     group=www-data
     recurse=yes
