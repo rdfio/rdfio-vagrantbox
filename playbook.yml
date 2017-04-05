@@ -33,5 +33,5 @@
       - { role: travis, tags: ['travis'] }
       - { role: mysql, tags: ['mysql', 'travis'] }
       - { role: mediawiki, tags: ['mediawiki', 'travis'] }
-      - { role: semantic_mediawiki, tags: ['semantic_mediawiki', 'travis'] }
-      - { role: rdfio, tags: ['rdfio', 'travis'] }
+      - { role: semantic_mediawiki, tags: ['semantic_mediawiki'] }
+      - { role: rdfio, tags: ['rdfio'] }
