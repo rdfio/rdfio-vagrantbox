@@ -18,8 +18,6 @@
     src=/vagrant/w
     dest=/var/www/html/w
     state=link
-    owner=vagrant
-    group=vagrant
 - name: Create MySQL database
   mysql_db:
     name=smw
