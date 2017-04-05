@@ -28,7 +28,7 @@
          - python-mysqldb
   roles:
       - { role: dotfiles, tags: ['dotfiles'] }
-      - { role: php, tags: ['php'] }
-      - { role: mediawiki, tags: ['mediawiki'] }
-      - { role: semantic_mediawiki, tags: ['semantic_mediawiki'] }
-      - { role: rdfio, tags: ['rdfio'] }
+      - { role: php, tags: ['php', 'travis'] }
+      - { role: mediawiki, tags: ['mediawiki', 'travis'] }
+      - { role: semantic_mediawiki, tags: ['semantic_mediawiki', 'travis'] }
+      - { role: rdfio, tags: ['rdfio', 'travis'] }
