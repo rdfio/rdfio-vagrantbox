@@ -10,7 +10,7 @@ if exists("syntax_on")
   syntax reset
 endif
 let g:colors_name = "cyanic"
-hi Normal		  guifg=white guibg=black ctermfg=darkgrey
+hi Normal		  guifg=white guibg=black ctermfg=white
 hi Scrollbar	  guifg=darkgrey guibg=grey
 hi Menu			  guifg=white guibg=cyan ctermfg=white ctermbg=lightmagenta
 hi Pmenu          guifg=white guibg=magenta ctermfg=White ctermbg=lightmagenta
