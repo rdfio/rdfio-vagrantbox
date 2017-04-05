@@ -1,0 +1,9 @@
+---
+- name: Create a vagrant folder, to make Travis build compatible with vagrant box
+  file:
+      dest=/vagrant
+      state=directory
+- name: Create a /var/www/html folder
+  file:
+      dest=/var/www/html
+      state=directory
