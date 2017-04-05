@@ -1,0 +1,6 @@
+---
+- name: Install stuff from Aptitude
+  apt: name={{ item }} state=installed
+  with_items:
+    - mysql-server
+    - php5-mysql

@@ -1,0 +1,16 @@
+---
+- name: Install stuff from Aptitude
+  apt: name={{ item }} state=installed
+  with_items:
+    - nginx
+- name: Add custom Nginx sites/default config file
+  copy:
+      src=nginx-sites-default
+      dest=/etc/nginx/sites-enabled/default
+      owner=root
+      group=root
+      mode=0644
+- name: Restart Nginx
+  service:
+      name=nginx
+      state=restarted
