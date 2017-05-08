@@ -87,6 +87,12 @@ vagrant ssh
 cd /var/www/html/w
 ```
 
-## STATUS
+## Known issues
 
-Things should work now, apart from any issues in [the issue tracker](https://github.com/rdfio/RDFIO/issues)
+After bringing up the vagrant box, you might see an error like this:
+
+```bash
+==> virtualbox: mesg: ttyname failed: Inappropriate ioctl for device
+```
+
+This is a minor glitch with vagrant, and nothing to worry about.
