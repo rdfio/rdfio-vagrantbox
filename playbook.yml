@@ -26,6 +26,7 @@
          - tmux
          - man-db
          - python-mysqldb
+         - ctags-exuberant
   roles:
       - { role: dotfiles, tags: ['dotfiles'] }
       - { role: php, tags: ['php'] }
