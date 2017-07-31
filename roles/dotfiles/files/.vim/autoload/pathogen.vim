@@ -1,1 +1,1 @@
-/home/vagrant/src/vim-pathogen/autoload/pathogen.vim
+/home/ubuntu/src/vim-pathogen/autoload/pathogen.vim

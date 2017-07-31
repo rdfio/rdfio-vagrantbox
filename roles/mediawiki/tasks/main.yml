@@ -36,7 +36,7 @@
     recurse=yes
 - name: Install MediaWiki database
   command:
-      hhvm /var/www/html/w/maintenance/install.php --scriptpath=/w --dbname=smw --dbuser=smw --dbpass=changethis --installdbuser=root --installdbpass= --pass=changethis MW admin
+      php /var/www/html/w/maintenance/install.php --scriptpath=/w --dbname=smw --dbuser=smw --dbpass=changethis --installdbuser=root --installdbpass= --pass=changethis MW admin
       creates=/var/www/html/w/LocalSettings.php
 - name: Change user & group of LocalSettings.php
   file:

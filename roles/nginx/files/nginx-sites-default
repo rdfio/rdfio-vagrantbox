@@ -8,7 +8,6 @@ server {
 	index index.php index.hh index.html index.htm index.nginx-debian.html;
 
 	server_name _;
-	include hhvm.conf;
 
 	location / {
 		try_files $uri $uri/ =404;
@@ -23,9 +22,13 @@ server {
 		deny  all;
 	}
 
-	location ~ \.(hh|php)$ {
+	location ~ \.php$ {
 	    fastcgi_keep_conn on;
-	    fastcgi_pass   127.0.0.1:9000;
+
+		include /etc/nginx/conf.d/*.conf;
+
+	    #fastcgi_pass   127.0.0.1:9000;
+	    fastcgi_pass   unix:/run/php/php7.0-fpm.sock;
 	    fastcgi_index  index.php;
 	    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
 	    include        fastcgi_params;

@@ -4,31 +4,34 @@
   with_items:
     - software-properties-common # Needed for HHVM install
     - composer
-    - php5-cli
-    - php5-xdebug
+    - php-apcu
+    - php-cli
+    - php-fpm
+    - php-mbstring
+    - php-xdebug
     - phpunit
-- name: Add HHVM repo key
-  apt_key:
-      keyserver=keyserver.ubuntu.com
-      id=0x5a16e7281be7a449
-- name: Add HHVM apt repo
-  apt_repository:
-      repo='deb http://dl.hhvm.com/ubuntu wily main'
-      state=present
-- name: Update apt cache after HHVM repo added
-  apt:
-      update_cache=yes
-- name: Install HHVM
-  apt: name={{ item }} state=installed
-  with_items:
-    - hhvm
-- name: Configure HHVM service
-  service: name=hhvm state=started
-- name: Make HHVM start automatically on startup
-  shell: update-rc.d hhvm defaults
-      creates=/etc/rc0.d/K01hhvm
-#- name: Link php commandline command to HHVM
-#  alternatives:
+#- name: Add HHVM repo key
+#  apt_key:
+#      keyserver=keyserver.ubuntu.com
+#      id=0x5a16e7281be7a449
+#- name: Add HHVM apt repo
+#  apt_repository:
+#      repo='deb http://dl.hhvm.com/ubuntu wily main'
+#      state=present
+#- name: Update apt cache after HHVM repo added
+#  apt:
+#      update_cache=yes
+#- name: Install HHVM
+#  apt: name={{ item }} state=installed
+#  with_items:
+#    - hhvm
+#- name: Configure HHVM service
+#  service: name=hhvm state=started
+#- name: Make HHVM start automatically on startup
+#  shell: update-rc.d hhvm defaults
+#      creates=/etc/rc0.d/K01hhvm
+##- name: Link php commandline command to HHVM
+##  alternatives:
 #    name=php
 #    link=/usr/bin/php
 #    path=/usr/bin/hhvm

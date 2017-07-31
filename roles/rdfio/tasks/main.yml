@@ -2,7 +2,7 @@
 - name: Change user & group for wiki folder
   file:
     path=/vagrant/w
-    owner=vagrant
+    owner=ubuntu
     group=www-data
     recurse=yes
 - name: Install RDFIO including dependencies via composer
@@ -15,8 +15,8 @@
     line='$smwgOWLFullExport = true;'
     dest={{ mw_dir }}/LocalSettings.php
     state=present
-- name: Set up ARC2 tables (taking some time because of HHVM jit compiling ...)
-  shell: cd {{ mw_dir }}/extensions/Rdfio/maintenance; hhvm setupStore.php;
+- name: Set up ARC2 tables
+  shell: cd {{ mw_dir }}/extensions/Rdfio/maintenance; php setupStore.php;
 - name: Import some initial wiki content
   shell: >
     php {{ mw_dir }}/maintenance/importDump.php /vagrant/roles/rdfio/files/wiki_content.xml
