@@ -30,6 +30,7 @@
          - man-db
          - python-mysqldb
          - exuberant-ctags
+         - zip
   roles:
       - { role: dotfiles, tags: ['dotfiles'] }
       - { role: php, tags: ['php'] }
