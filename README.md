@@ -2,7 +2,9 @@
 
 This is an automatic setup script for setting up a Virtual Machine with [MediaWiki](https://www.mediawiki.org) (the software behind Wikipedia), [Semantic MediaWiki](https://www.semantic-mediawiki.org) (which adds structured data editing features to MediaWiki) and the [RDFIO](https://github.com/rdfio/RDFIO) extension, which adds data import, expoert and querying support.
 
-In technical terms, it uses [Vagrant](https://www.vagrantup.com/) as a wrapper, to allow starting the script with one simple command (`vagrant up`) and [Ansible](https://www.ansible.com/) for doing running the installation and configurations (often called "provisioning") in the background.
+It is simple to use: Check out this git repository in a folder on you computer, install Vagrant, Ansible and Virtualbox (which are super easy to install on most systems), and then run `vagrant up` in the folder. See the [installation section](#Installation) for more details.
+
+In technical terms, this setup uses [Vagrant](https://www.vagrantup.com/) as a wrapper, to allow starting the script with one simple command (`vagrant up`) and [Ansible](https://www.ansible.com/) for doing the installation and configurations (often called "provisioning") in the background.
 
 The fact that Ansible is used for provisioning, means that the installation
 instructions are easy to understand and change, and that they can be equally
