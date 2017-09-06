@@ -1,15 +1,12 @@
 # RDFIO Vagrant box
 
-A [Vagrant](https://www.vagrantup.com/) box with
-[Ansible](https://www.ansible.com/) provisioning for setting up a local
-development environment in a virtual machine, for developing the
-[RDFIO](https://github.com/rdfio/RDFIO) extension to
-[MediaWiki](https://www.mediawiki.org) / [Semantic MediaWiki](https://www.semantic-mediawiki.org).
+This is an automatic setup script for setting up a Virtual Machine with [MediaWiki](https://www.mediawiki.org) (the software behind Wikipedia), [Semantic MediaWiki](https://www.semantic-mediawiki.org) (which adds structured data editing features to MediaWiki) and the [RDFIO](https://github.com/rdfio/RDFIO) extension, which adds data import, expoert and querying support.
+
+In technical terms, it uses [Vagrant](https://www.vagrantup.com/) as a wrapper, to allow starting the script with one simple command (`vagrant up`) and [Ansible](https://www.ansible.com/) for doing running the installation and configurations (often called "provisioning") in the background.
 
 The fact that Ansible is used for provisioning, means that the installation
 instructions are easy to understand and change, and that they can be equally
-well installed elsewhere too, not just in a virtual machine on the local
-computer.
+well installed elsewhere too, like in the cloud, or a local computer.
 
 ![RDFIO screenshot showing the in-built SPARQL endpoint](http://i.imgur.com/PMMIHZ4.png)
 
