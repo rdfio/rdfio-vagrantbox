@@ -1,4 +1,4 @@
-# RDFIO Vagrant box
+# RDFIO Virtual Machine Setup or "Vagrant box"
 
 This is an automatic setup script for setting up a Virtual Machine with [MediaWiki](https://www.mediawiki.org) (the software behind Wikipedia), [Semantic MediaWiki](https://www.semantic-mediawiki.org) (which adds structured data editing features to MediaWiki) and the [RDFIO](https://github.com/rdfio/RDFIO) extension, which adds data import, export and querying support to Semantic MediaWiki.
 
