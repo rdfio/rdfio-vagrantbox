@@ -32,6 +32,7 @@
          - exuberant-ctags
          - zip
   roles:
+      #- { role: desktop, tags: ['desktop'] }
       - { role: dotfiles, tags: ['dotfiles'] }
       - { role: php, tags: ['php'] }
       - { role: nginx, tags: ['nginx'] }

@@ -1,0 +1,35 @@
+---
+- name: Install selected parts from the Xubuntu Desktop Environment
+  apt: name={{ item }} state=installed
+  with_items:
+    - xubuntu-core
+    - lightdm
+    - lightdm-gtk-greeter
+    - thunar
+    - thunar-volman
+    - unzip
+    - update-manager
+    - xdg-user-dirs
+    - xdg-user-dirs-gtk
+    - xdg-utils
+    - xfce4-appfinder
+    - xfce4-notifyd
+    - xfce4-panel
+    - xfce4-session
+    - xfce4-settings
+    - xfdesktop4
+    - xfwm4
+    - xkb-data
+    - xorg
+    - xterm
+    - xubuntu-core
+    - xubuntu-default-settings
+    - zenity
+    - zip
+    - firefox
+    - make
+    - gnome-terminal
+    - gnome-system-monitor
+    - virtualbox-guest-utils
+    - geany
+  sudo: true
