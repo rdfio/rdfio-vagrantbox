@@ -19,17 +19,17 @@
       - name: Install stuff from Aptitude
         apt: name={{ item }} state=installed
         with_items:
-         - git
-         - tig
-         - vim
          - bash-completion # Not included in the docker image
-         - make
-         - tree
+         - exuberant-ctags
+         - git
          - htop
-         - tmux
+         - make
          - man-db
          - python-mysqldb
-         - exuberant-ctags
+         - tig
+         - tmux
+         - tree
+         - vim
          - zip
   roles:
       #- { role: desktop, tags: ['desktop'] }
